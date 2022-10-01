@@ -3,7 +3,7 @@ import { Vector2 } from "three";
 export class MovementState {
     public forward: boolean;
     public backward: boolean;
-    
+
     public left: boolean;
     public right: boolean;
 
@@ -22,7 +22,14 @@ export class MovementState {
     }
 
     public get none() {
-        return !this.forward && !this.backward && !this.left && !this.right && !this.up && !this.down;
+        return (
+            !this.forward &&
+            !this.backward &&
+            !this.left &&
+            !this.right &&
+            !this.up &&
+            !this.down
+        );
     }
 }
 

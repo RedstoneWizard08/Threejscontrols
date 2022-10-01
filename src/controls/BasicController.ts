@@ -1,16 +1,22 @@
-import { Vector2, Vector3, Quaternion, Scene, Camera, Object3D } from "three";
+import { Vector2, Quaternion, Scene, Camera } from "three";
+import { Body } from "cannon-es";
 
 export class BasicController {
     protected position: Vector2;
     protected rotation: Quaternion;
 
-    protected player: Object3D;
+    protected player: Body;
     protected camera: Camera;
     protected element: HTMLElement;
     protected scene: Scene;
-    
-    public constructor(player: any, camera: any, scene: Scene, element: HTMLElement) {
-        this.position = new Vector3();
+
+    public constructor(
+        player: Body,
+        camera: Camera,
+        scene: Scene,
+        element: HTMLElement
+    ) {
+        this.position = new Vector2();
         this.rotation = new Quaternion();
 
         this.player = player;
